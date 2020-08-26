@@ -1,4 +1,4 @@
-# Text/Meeting Summarization
+## Text/Meeting Summarization
 There are broadly two different approaches that are used for text summarization:  
 ## Extractive Summarization  
 We identify the important sentences or phrases from the original text and extract only those from the text. Those extracted sentences would be our summary. Some of the methods are:  
