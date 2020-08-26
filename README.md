@@ -9,6 +9,63 @@ We identify the important sentences or phrases from the original text and extrac
 Here, we generate new sentences from the original text. This is in contrast to the extractive approach we saw earlier where we used only the sentences that were present. The sentences generated through abstractive summarization might not be present in the original text.   
 
 ## Sentence Scoring based on Word Frequency
+### Code to import libraries, (there might be extra libraries here than needed as it was a combined notebook for some other code too!
+```ruby
+import gensim
+from gensim.utils import simple_preprocess
+from gensim.parsing.preprocessing import STOPWORDS
+from nltk.stem import WordNetLemmatizer, SnowballStemmer
+from nltk.stem.porter import *
+import numpy as np
+np.random.seed(400)
+import collections
+import re
+import nltk
+!pip install tika
+import tika
+import glob
+tika.initVM()
+import seaborn as sns
+from tika import parser
+from nltk.stem import SnowballStemmer
+import os
+import pandas as pd
+import gensim, nltk, os
+nltk.download('punkt')
+from nltk.corpus import stopwords
+nltk.download('stopwords')
+import gensim
+from gensim import corpora
+import pickle
+import random
+from gensim import corpora, models
+import wordcloud
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+from nltk.corpus import stopwords 
+from nltk.tokenize import word_tokenize, sent_tokenize 
+import spacy
+import spacy.lang.en.stop_words as STOP_WORDS
+from string import punctuation
+from heapq import nlargest
+from nltk.corpus import stopwords
+from nltk.cluster.util import cosine_distance
+import numpy as np
+import networkx as nx
+import math
+```
+## Do as follows if guidedlda in not getting installed with pip
+from command window  
+
+git clone https://github.com/vi3k6i5/GuidedLDA cd GuidedLDA ls sh build_dist.sh python setup.py sdist pip3 install -e .   
+
+pip3 install -U cython  
+
+remove the following 2 lines from setup.cfg:  
+
+[sdist] pre-hook.sdist_pre_hook = guidedlda._setup_hooks.sdist_pre_hook  
+
+
 ### Code for preprocessing (Removing stopwords and lemmatization)
 ```ruby
 '''
